@@ -3,6 +3,8 @@
 
 1. Web Crawler
 
-2. Data Visualization
+2. Data Cleaning
 
-3. Housing Price Prediction
+3. Data Visualization
+
+4. Housing Price Prediction
