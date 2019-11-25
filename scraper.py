@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-import model
 import misc
 import time
 import datetime
@@ -12,6 +11,9 @@ logging.basicConfig(
 
 
 def get_sales_from_community(city, communitylist):
+    """
+    get sales data from community
+    """
     logging.info("Get Sell Infomation")
     starttime = datetime.datetime.now()
     for community in communitylist:
@@ -26,6 +28,9 @@ def get_sales_from_community(city, communitylist):
 
 
 def get_community_from_region(city, regionlist=[u'xicheng']):
+    """
+        get community data from region
+    """
     logging.info("Get Community Infomation")
     starttime = datetime.datetime.now()
     for regionname in regionlist:
@@ -41,6 +46,9 @@ def get_community_from_region(city, regionlist=[u'xicheng']):
 
 
 def get_house_from_region(city, regionlist=[u'xicheng']):
+    """
+        get house data from region
+    """
     starttime = datetime.datetime.now()
     for regionname in regionlist:
         logging.info("Get Onsale House Infomation in %s" % regionname)
@@ -54,6 +62,9 @@ def get_house_from_region(city, regionlist=[u'xicheng']):
 
 
 def get_rent_from_region(city, regionlist=[u'xicheng']):
+    """
+    get rent from region
+    """
     starttime = datetime.datetime.now()
     for regionname in regionlist:
         logging.info("Get Rent House Infomation in %s" % regionname)
@@ -67,6 +78,9 @@ def get_rent_from_region(city, regionlist=[u'xicheng']):
 
 
 def get_sales_by_community(city, communityname):
+    """
+    get the sales data
+    """
     baseUrl = u"http://%s.lianjia.com/" % (city)
     url = baseUrl + u"chengjiao/rs" + \
         urllib2.quote(communityname.encode('utf8')) + "/"
@@ -76,10 +90,6 @@ def get_sales_by_community(city, communityname):
     if check_block(soup):
         return
     total_pages = misc.get_total_pages(url)
-
-    if total_pages == None:
-        row = model.Sellinfo.select().count()
-        raise RuntimeError("Finish at %s because total_pages is None" % row)
 
     data_source = []
     for page in range(total_pages):
@@ -155,6 +165,9 @@ def get_sales_by_community(city, communityname):
 
 
 def get_community_by_region(city, regionname=u'xicheng'):
+    """
+    get the community data
+    """
     baseUrl = u"http://%s.lianjia.com/" % (city)
     url = baseUrl + u"xiaoqu/" + regionname + "/"
     source_code = misc.get_source_code(url)
@@ -163,10 +176,6 @@ def get_community_by_region(city, regionname=u'xicheng'):
     if check_block(soup):
         return
     total_pages = misc.get_total_pages(url)
-
-    if total_pages == None:
-        row = model.Community.select().count()
-        raise RuntimeError("Finish at %s because total_pages is None" % row)
 
     data_source = []
     for page in range(total_pages):
@@ -227,6 +236,9 @@ def get_community_by_region(city, regionname=u'xicheng'):
 
 
 def get_house_by_region(city, district):
+    """
+    get the house data
+    """
     baseUrl = u"http://%s.lianjia.com/" % (city)
     url = baseUrl + u"ershoufang/%s/" % district
     source_code = misc.get_source_code(url)
@@ -234,9 +246,6 @@ def get_house_by_region(city, district):
     if check_block(soup):
         return
     total_pages = misc.get_total_pages(url)
-    if total_pages == None:
-        row = model.Houseinfo.select().count()
-        raise RuntimeError("Finish at %s because total_pages is None" % row)
 
     data_source = []
     for page in range(total_pages):
@@ -303,6 +312,9 @@ def get_house_by_region(city, district):
 
 
 def get_rent_by_region(city, district):
+    """
+    get rent data
+    """
     baseUrl = u"http://%s.lianjia.com/" % (city)
     url = baseUrl + u"zufang/%s/" % district
     source_code = misc.get_source_code(url)
@@ -310,9 +322,6 @@ def get_rent_by_region(city, district):
     if check_block(soup):
         return
     total_pages = misc.get_total_pages(url)
-    if total_pages == None:
-        row = model.Rentinfo.select().count()
-        raise RuntimeError("Finish at %s because total_pages is None" % row)
 
     data_source = []
     for page in range(total_pages):
@@ -385,6 +394,9 @@ def get_rent_by_region(city, district):
 
 
 def get_communityinfo_by_url(url):
+    """
+    get community info from url
+    """
     source_code = misc.get_source_code(url)
     soup = BeautifulSoup(source_code, 'lxml')
 
@@ -416,6 +428,9 @@ def get_communityinfo_by_url(url):
 
 
 def check_block(soup):
+    """
+    checks if ip is blocked
+    """
     if soup.title.string == "414 Request-URI Too Large":
         logging.error(
             "Lianjia block your ip, please verify captcha manually at lianjia.com")
@@ -424,6 +439,9 @@ def check_block(soup):
 
 
 def log_progress(function, address, page, total):
+    """
+    log to indicate progress
+    """
     logging.info("Progress: %s %s: current page %d total pages %d" %
                  (function, address, page, total))
 
