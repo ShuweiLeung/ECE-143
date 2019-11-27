@@ -1,0 +1,15 @@
+Projection    EQUIDISTANT
+Datum         WGS84
+Spheroid      WGS84
+Units         METERS
+Zunits        NO
+Xshift        0.0
+Yshift        0.0
+Parameters    
+ 2 /* Number of standard parallels < 1 | 2 >
+  15  0  0.0 /* Latitude  of the 1st standard parallel (DMS)
+  65  0  0.0 /* Latitude  of the 2nd standard parallel (DMS)
+  95  0  0.0 /* Longitude of the central meridian (DMS)
+  30  0  0.0 /* Latitude  of the origin (DMS)
+0.0 /* False easting (meters)
+0.0 /* False northing (meters)
