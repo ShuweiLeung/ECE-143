@@ -1,43 +1,21 @@
-# ECE-143
-The Chinese Silicon Valley  on Housing Prices
+## The Chinese Silicon Valley  on Housing Prices
 
-Directories:
+### File Structure:
 
-      dataset - contains csv housing data
+* ECE 143 Presentation.pdf - slides for final project presentation
+
+* visualization_prediction.ipynb - jupyter notebook for data cleaning, visualization and price prediction
+
+* dataset - contains csv housing data
   
-      housing price spatial distribution - contains graphs
+* scraping - contains scraper code
   
-      scraping - contains scraper code
+* spatial distribution - contains ArcGis spatial visualizations
   
-      spatial distribution - contains ArcGis spatial visualizations
-  
-  
-How to Run:
+### Modules and Tools
 
-    Run scraper: python scraping/scraper.py
+* `bs4`, `urllib.request`, `pandas`, `numpy`, `matplotlib`, `sklearn` 
 
+### How to Run Scraper:
 
-Third Party Modules:
-  
-    -bs4
-    
-    -urllib.request
-    
-    -pandas
-    
-    -numpy
-   
-    -matplotlib
-    
-    -sklearn
-
-
-1. Web Crawler
-
-2. Data Cleaning
-
-3. Data Visualization
-
-4. Housing Price Prediction
-
-5. Presentation
+    python scraping/scraper.py
