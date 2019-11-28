@@ -2,21 +2,35 @@
 The Chinese Silicon Valley  on Housing Prices
 
 Directories:
-  dataset - contains csv housing data
-  housing price spatial distribution - contains graphs
-  scraping - contains scraper code
-  spatial distribution - contains ArcGis spatial visualizations
+
+      dataset - contains csv housing data
+  
+      housing price spatial distribution - contains graphs
+  
+      scraping - contains scraper code
+  
+      spatial distribution - contains ArcGis spatial visualizations
+  
   
 How to Run:
-  Run scraper: python scraping/scraper.py
-  
+
+    Run scraper: python scraping/scraper.py
+
+
 Third Party Modules:
-  -bs4
-  -urllib.request
-  -pandas
-  -numpy
-  -matplotlib
-  -sklearn
+  
+    -bs4
+    
+    -urllib.request
+    
+    -pandas
+    
+    -numpy
+   
+    -matplotlib
+    
+    -sklearn
+
 
 1. Web Crawler
 
