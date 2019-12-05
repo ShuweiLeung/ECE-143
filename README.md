@@ -19,3 +19,15 @@
 ## How to Run Scraper:
 
     python scraping/scraper.py
+    
+## Data Cleaning
+
+* The code for data cleaning is written in the `visualization_prediction.ipynb` file.
+
+## Visualization
+
+* Data visualization is shown in `visualization_prediction.ipynb` file.
+
+## Prediction
+
+* We used two regression models to predict the housing price. The accuracy is very high.
