@@ -1,5 +1,9 @@
 # The Chinese Silicon Valley  on Housing Prices
 
+## Dataset
+
+* Our dataset is scraped from [Lianjia](https://bj.lianjia.com/ershoufang/).
+
 ## File Structure
 
 * ECE 143 Presentation.pdf - slides for final project presentation
@@ -18,7 +22,7 @@
 
 ## How to Run Scraper
 
-    python scraping/scraper.py
+`python scraping/scraper.py`
     
 ## Data Cleaning
 
