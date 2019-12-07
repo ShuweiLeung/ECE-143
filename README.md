@@ -1,6 +1,6 @@
 # The Chinese Silicon Valley  on Housing Prices
 
-## File Structure:
+## File Structure
 
 * ECE 143 Presentation.pdf - slides for final project presentation
 
@@ -16,7 +16,7 @@
 
 * `bs4`, `urllib.request`, `pandas`, `numpy`, `matplotlib`, `sklearn` 
 
-## How to Run Scraper:
+## How to Run Scraper
 
     python scraping/scraper.py
     
